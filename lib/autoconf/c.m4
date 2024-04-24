@@ -1337,13 +1337,18 @@ ac_c_conftest_c99_main='
 
   ni.number = 58;
 
+#if !defined(__STDC_NO_VLA__) || __STDC_NO_VLA__ != 1
   int dynamic_array[ni.number];
   dynamic_array[0] = argv[0][0];
   dynamic_array[ni.number - 1] = 543;
+#endif
 
   // work around unused variable warnings
   ok |= (!success || bignum == 0LL || ubignum == 0uLL || newvar[0] == '\''x'\''
-	 || dynamic_array[ni.number - 1] != 543);
+#if !defined(__STDC_NO_VLA__) || __STDC_NO_VLA__ != 1
+	 || dynamic_array[ni.number - 1] != 543
+#endif
+	);
 '
 ]])])
 
