@@ -1553,6 +1553,7 @@ m4_define([_AC_C_C99_OPTIONS], [
 # shell quotes around the group.
 #
 # GCC, Clang    -std=gnu11
+# MSVC          -std:c11
 #
 # For IBM XL C for AIX V16.1 or later, '-std=gnu11' should work if
 # the user configured with CC='xlclang'.  Otherwise, do not try
@@ -1562,6 +1563,7 @@ m4_define([_AC_C_C99_OPTIONS], [
 # _Noreturn, which is a win.
 m4_define([_AC_C_C11_OPTIONS], [
     -std=gnu11
+    -std:c11
 ])
 
 
