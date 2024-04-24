@@ -1123,7 +1123,7 @@ ac_c_conftest_c89_globals='
 /* Does the compiler advertise C89 conformance?
    Do not test the value of __STDC__, because some compilers set it to 0
    while being otherwise adequately conformant. */
-#if !defined __STDC__
+#if !defined __STDC__ && !defined _MSC_VER
 # error "Compiler does not advertise C89 conformance"
 #endif
 
